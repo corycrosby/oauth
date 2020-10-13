@@ -1,0 +1,28 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "A project testing setting up authorization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corycrosby/oauth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corycrosby/oauth/issues"
+  },
+  "homepage": "https://github.com/corycrosby/oauth#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@koa/router": "^9.4.0",
+    "@types/koa": "^2.11.5",
+    "@types/koa__router": "^8.0.3",
+    "koa": "^2.13.0",
+    "typescript": "^4.0.3"
+  }
+}
