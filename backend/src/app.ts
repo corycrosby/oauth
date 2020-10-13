@@ -12,8 +12,8 @@ router.get("/", (ctx: Koa.Context) => {
 
 export default function startServer() {
   try {
-    app.listen(3030, () => {
-      console.log("Koa listening on 3030");
+    app.listen(process.env.APP_PORT, () => {
+      console.log(`Koa listening on ${process.env.APP_PORT}`);
     });
   } catch (err) {
     console.error(`Connection error: ${err}`);
