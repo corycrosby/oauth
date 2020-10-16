@@ -40,4 +40,4 @@ services:
     environment:
       POSTGRES_PASSWORD: pass
       POSTGRES_USER: user
-      POSTGRES_DB: todo_list
+      POSTGRES_DB: oauth_users

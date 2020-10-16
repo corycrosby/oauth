@@ -1,0 +1,17 @@
+{
+  "transforms": [
+    {
+      "mode": "sql",
+      "include": "**/*.sql",
+      "emitTemplate": "{{dir}}/{{name}}.queries.ts"
+    }
+  ],
+  "srcDir": "./backend/src/database",
+  "failOnError": false,
+  "db": {
+    "host": "db",
+    "user": "user",
+    "dbName": "oauth_users",
+    "password": "pass"
+  }
+}
