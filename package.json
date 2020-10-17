@@ -11,6 +11,7 @@
     "reset-db": "npm run drop-db && npm run create-db",
     "compile-queries": "npx pgtyped -w -c pgTypedconfig.json",
     "build": "concurrently \"tsc -w\" \"nodemon -r dotenv/config dist/backend\"",
+    "install-frontend": "npm i --prefix ./frontend",
     "dev": "npm run dev --prefix frontend"
   },
   "repository": {
