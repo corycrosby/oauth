@@ -9,13 +9,13 @@ app.use(parser());
 app.use(router.routes());
 
 export default function startServer() {
-  const APP_PORT = process.env.APP_PORT;
+  const SERVER_PORT = process.env.SERVER_PORT;
 
   try {
     seedDb();
     
-    app.listen(APP_PORT, () => {
-      console.log(`Koa listening on ${APP_PORT}`);
+    app.listen(SERVER_PORT, () => {
+      console.log(`Koa listening on ${SERVER_PORT}`);
     });
   } catch (err) {
     console.error(`Connection error: ${err}`);
