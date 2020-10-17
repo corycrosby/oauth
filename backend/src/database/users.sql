@@ -4,6 +4,9 @@ SELECT * FROM users;
 /* @name GetUserById */
 SELECT * FROM users WHERE users.id = :userId;
 
-/* @name AddUser */
-INSERT INTO users (name) VALUES (:userName)
+/* 
+  @name AddUser 
+  @param user -> (name, email)
+*/
+INSERT INTO users(name, email) VALUES :user
 RETURNING *;

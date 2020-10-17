@@ -8,6 +8,7 @@ export type IQueryAllUsersParams = void;
 export interface IQueryAllUsersResult {
   id: number;
   name: string;
+  email: string;
 }
 
 /** 'QueryAllUsers' query type */
@@ -36,6 +37,7 @@ export interface IGetUserByIdParams {
 export interface IGetUserByIdResult {
   id: number;
   name: string;
+  email: string;
 }
 
 /** 'GetUserById' query type */
@@ -57,13 +59,17 @@ export const getUserById = new PreparedQuery<IGetUserByIdParams,IGetUserByIdResu
 
 /** 'AddUser' parameters type */
 export interface IAddUserParams {
-  userName: string | null | void;
+  user: {
+    name: string | null | void,
+    email: string | null | void
+  };
 }
 
 /** 'AddUser' return type */
 export interface IAddUserResult {
   id: number;
   name: string;
+  email: string;
 }
 
 /** 'AddUser' query type */
@@ -72,12 +78,12 @@ export interface IAddUserQuery {
   result: IAddUserResult;
 }
 
-const addUserIR: any = {"name":"AddUser","params":[{"name":"userName","transform":{"type":"scalar"},"codeRefs":{"used":[{"a":173,"b":180,"line":8,"col":34}]}}],"usedParamSet":{"userName":true},"statement":{"body":"INSERT INTO users (name) VALUES (:userName)\nRETURNING *","loc":{"a":139,"b":193,"line":8,"col":0}}};
+const addUserIR: any = {"name":"AddUser","params":[{"name":"user","codeRefs":{"defined":{"a":149,"b":152,"line":9,"col":9},"used":[{"a":213,"b":216,"line":11,"col":39}]},"transform":{"type":"pick_tuple","keys":["name","email"]}}],"usedParamSet":{"user":true},"statement":{"body":"INSERT INTO users(name, email) VALUES :user\nRETURNING *","loc":{"a":174,"b":228,"line":11,"col":0}}};
 
 /**
  * Query generated from SQL:
  * ```
- * INSERT INTO users (name) VALUES (:userName)
+ * INSERT INTO users(name, email) VALUES :user
  * RETURNING *
  * ```
  */
