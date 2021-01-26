@@ -2,6 +2,12 @@
 
 A project testing setting up OAuth.
 
+# Built With
+
+This is run using [Visual Studio Code] (https://code.visualstudio.com/) with Docker in a [development container] (https://code.visualstudio.com/docs/remote/containers).
+
+The front-end is built using [Nextjs] (https://nextjs.org/).
+
 # Running the App
 
 Starting the backend:

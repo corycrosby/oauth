@@ -7,7 +7,6 @@ const loginRouter = new Router();
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
-
 loginRouter.get("/github", (ctx: Koa.Context) => {
   const redirectUrl = "http://localhost:3030/login/github/callback";
   const url = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${redirectUrl}`;
